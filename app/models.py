@@ -45,6 +45,8 @@ class Sensor(models.Model):
     color = models.CharField(max_length=100, verbose_name='Цвет')
     units = models.CharField(max_length=100, verbose_name='Единицы измерения')
     current_value = models.FloatField(blank=True, default=0.0, verbose_name='Текущее значение')
+    center = models.BooleanField(default=False, verbose_name='Центрирование')
+    line_breaks = models.BooleanField(default=False, verbose_name='Перенос строки')
     scheme = models.ForeignKey('MnemonicScheme', on_delete=models.DO_NOTHING, related_name='sensors', null=True)
 
     class Meta:
